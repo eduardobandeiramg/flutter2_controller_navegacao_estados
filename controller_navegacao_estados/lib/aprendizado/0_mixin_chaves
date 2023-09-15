@@ -1,0 +1,17 @@
+Mixin (exemplo na tela de formulario):
+mixin é um conjunto de atributos e métodos que podem ser utilizados e acessados por qualquer classe quando se usa o comando "with" no momento de declaração da classe
+Seu uso foi feito no recurso de formulario.
+
+Chaves (exemplo na tela de formulario):
+Servem para identificar widgets.
+Podem ser utilizadas para:
+- saber o estado atual de um widget
+Como utilizar chaves:
+- declarar a chave numa variavel e entao associar essa variavel a um parametro "key" que se deseja associar a esta chave.
+Para entender melhor: ver o texto e a tela de formulario
+
+
+Observação:
+Diferença entre estados
+key.currentState. ... => retorna o estado atual
+setState() => cria um novo estado

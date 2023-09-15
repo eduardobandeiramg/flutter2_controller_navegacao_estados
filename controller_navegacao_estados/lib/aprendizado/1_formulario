@@ -1,1 +1,22 @@
-testando
+Formularios podem ser criados usando o widget:
+Form{
+deve englobar os TextFormFields (direta ou indiretamente) para controlar métodos importantes deste widgets, como os validators
+atributos importantes:
+- key: identificador do widget. Usado no caso do formulario para executar algumas operações para: key.currentState.validate()
+    (= o estado atual do widget state identificado pela chave está como "validado").
+
+    obs.: a chave será uma variável que armazenará uma classe GlobalKey<>
+}
+
+TextFormField{
+atributos importantes:
+- controller: recebe a variavel que armazenará os dados digitados (variavel é um objeto do tipo TextEditingController)
+- validator: valida as informações digitadas pelo usuario. Retorna null se estiver ok e retorna uma mensagem se estiver errado
+    Como chamar o validator: key.currentState!.validate()
+    Normalmente se chama o validator ao pressionar algum botão ou ao passar para o próximo formulário.
+    O validator não funcionará se o TextFormField não foi um filho, neto, bisneto (...) de "Form"!!
+
+}
+
+E podem ser personalizados com o SigleChildScrollView para que possam ser rolados de forma a ver o conteúdo por inteiro.
+Util pois o teclado sobe e ocupa grande parte do espaço na tela
