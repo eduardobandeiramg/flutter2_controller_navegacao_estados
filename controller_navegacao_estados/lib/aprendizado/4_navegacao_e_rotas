@@ -1,0 +1,22 @@
+Navegação: transição entre telas
+Rotas: cada uma das telas envolvidas em uma navegação
+
+Tipos de rotas:
+rotas anônimas: as telas são chamadas na hora de executar a navegação.
+
+    Navigator.push (context , MaterialPageRoute(builder: (context) {
+     return FormScreen ();
+     }
+    );
+
+    Navigator.pop (context);
+
+rotas nomeadas: cada tela recebe uma nomeação, um "apelido", que pode ser chamado ao executar uma navegação
+
+    MaterialApp (routes: {
+        '/': (context) => InitialScreen (),
+        '/form': (context) => FormScreen (),
+     },
+    );
+
+    Navigator.pushNamed (context, "/form');
