@@ -11,6 +11,10 @@ class Dados extends InheritedWidget {
 
   final List<Widget> listaContaineres = [];
 
+  void add(Container valor){
+  listaContaineres.add(valor);
+  }
+
   static Dados of(BuildContext context) {
     final Dados? result = context.dependOnInheritedWidgetOfExactType<Dados>();
     assert(result != null, 'No Dados found in context');

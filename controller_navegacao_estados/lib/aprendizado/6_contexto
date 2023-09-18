@@ -1,6 +1,9 @@
 Em poucas palavras: são as coordenadas para determinada posição na árvore de widgets.
+Em resumo, contexto é o local onde a informação se encontra. Por exemplo, a tela inicial é um contexto; a tela de formulário é outro lugar (contexto). Para se guiar, é possível utilizar a árvore de widgets para descobrir em qual contexto está uma informação. Por fim, nos aprofundamos no of(Context).
 
-
+Para que seja possível a comunicação entre widgets, eles devem estar em um mesmo contexto.
+Algumas vezes, ao se passar para uma outra tela ao clique de um botão, um novo contexto é criado. É aí que se deve ficar atento e garantir (caso necessário), que o contexto criado seja o mesmo do atual.
+O contexto atual é definido pela palavra context.
 
 
 Ao criar um novo widget (objeto), com seus respectivos atributos, não colocamos eles dentro de variáveis.

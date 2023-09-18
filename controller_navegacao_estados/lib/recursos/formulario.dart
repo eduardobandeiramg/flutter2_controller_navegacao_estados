@@ -1,4 +1,5 @@
 import 'package:controller_navegacao_estados/recursos/segunda_tela.dart';
+//import 'package:controller_navegacao_estados/data/form_data.dart';
 import 'package:flutter/material.dart';
 
 //Classe com exemplos de:
@@ -14,6 +15,8 @@ mixin reutilizavel {
 
 //Construção da página pra chamar na main;
 class Formulario extends StatefulWidget {
+  final BuildContext estado;
+  const Formulario(this.estado);
   @override
   State<Formulario> createState() => FormularioState();
 }
@@ -52,7 +55,7 @@ class MeuCampoTextoEstado extends State<MeuCampoTexto> with reutilizavel {
   final chave = GlobalKey<FormState>();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext estado) {
     return Form(
       // os TextFormfields devem ficar dentro de um widget Form para que alguns metodos do campo de textto sejam executados da forma correta, como o validator por exemplo.
       key: chave,
@@ -110,6 +113,8 @@ class MeuCampoTextoEstado extends State<MeuCampoTexto> with reutilizavel {
                   // funcao que será executada caso todos os retornos de todos os validates sejam nulos.
                   ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text("enviando seus dados")));
+                 // Dados.of(estado).add(Container(child: Text(entradaNome)));
+
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text(
