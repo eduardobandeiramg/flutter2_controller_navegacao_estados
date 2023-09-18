@@ -1,16 +1,17 @@
-# controller_navegacao_estados
+Aprendendo sobre formulários, navegação e troca de mensagens entre widgets.
 
-A new Flutter project.
+Em formulários, é bom lembrar de alguns aspectos fundamentais:
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Sobre TROCA DE MENSAGENS:
+A troca de informações entre widgets no flutter é gerenciada por uma classe que herda de InheritedWidget.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Essa classe trabalha tendo 2 grandes funções principais: 
+armazenar dados que são recebidos de outras classes (define metodos) e 
+disparar a reconstrução das classes dependentes que implementam seu metodo "of". (ex: children: DadosDoBanco().of.minhaLista)
+
+Quando o estado dessa classe mudar, o metodo updateShouldNotify será executado e notificará toda sua descendência caso retorne true. 
+O retorno de true ou false pode ser definido sob alguma condição. 
+Ver o detalhamento dessa implementação em: data/form_data.dart

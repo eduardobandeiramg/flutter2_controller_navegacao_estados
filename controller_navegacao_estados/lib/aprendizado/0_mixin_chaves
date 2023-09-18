@@ -14,4 +14,13 @@ Para entender melhor: ver o texto e a tela de formulario
 Observação:
 Diferença entre estados
 key.currentState. ... => retorna o estado atual
-setState() => cria um novo estado
+setState() => chama o método build, que reconstruirá a interface do usuário.
+
+Observação_2: Onde colocar variáveis?
+Em termos de acesso, em qualquer lugar. Basta decidir em questão de modularidade e segurança
+- Em outros arquivos: usar import + mixin
+- Em outras classes: usar mixin
+- Na classe Stateful e acesso na State: usar widget.
+- Na própria classe
+
+- Em outros pacotes (?) .....

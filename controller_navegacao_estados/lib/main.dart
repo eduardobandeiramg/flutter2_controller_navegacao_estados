@@ -1,4 +1,6 @@
-import 'package:controller_navegacao_estados/recursos/formulario.dart';
+import 'package:controller_navegacao_estados/data/form_data.dart';
+//import 'package:controller_navegacao_estados/recursos/formulario.dart';
+import 'package:controller_navegacao_estados/recursos/pagina_inicial.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,9 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
           useMaterial3: true,
         ),
-        home: Formulario());
+        home: Dados(child: PaginaInicial()));
   }
 }

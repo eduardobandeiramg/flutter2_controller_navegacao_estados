@@ -1,0 +1,34 @@
+Resumo pra refrescar a memória:
+- A classe InheritedWidget tem um vetor de algo.
+- A classe de formulario tem um botao.
+- Esse botão dispara um método definido na classe InheritedWidget, que armazena a informação no vetor.
+- Quando o valor é armazenado no vetor, o estado da classe Inherited mudou.
+- Ela então vai executar o método updateShoudNotify** para avisar (true) ou não (false) toda a sua descendência (filhos, netos, bisnetos,....) que acessa seu contexto.
+- Como assim avisar a descendência? Algumas classes abaixo do Inherited usam a função "of" do Inherited, que analisa seu contexto.
+- exemplo: classeInherited.of(context).atributo
+- Assim, entende-se contexto como o estado que é interessante utilizar.
+
+**: ler até o final deste documento e olhar a função no arquivo "data/form_data.dart"
+
+obs.: do primeiro curso, entende-se estado como:
+valores atuais das variáveis de um widget
+ou
+valor atual de uma variável
+
+Tipos de estado:
+- Ephemeral State: apenas o próprio widget precisa dos dados que estão sendo alterados nele. -> setState
+- App State: 1 ou mais widgets precisam dos dados de outro widget.
+
+Para usar o AppState: InheritedWidget
+
+InheritedWidget trata-se de um widget de BACKEND!!!!
+
+A troca de informações entre widgets no flutter é gerenciada por uma classe que herda de InheritedWidget.
+
+Essa classe trabalha tendo 2 grandes funções principais:
+armazenar dados que são recebidos de outras classes (define metodos) e
+disparar a reconstrução das classes dependentes que implementam seu metodo "of". (ex: children: DadosDoBanco().of.minhaLista)
+
+Quando o estado dessa classe mudar, o metodo updateShouldNotify será executado e notificará toda sua descendência caso retorne true.
+O retorno de true ou false pode ser definido sob alguma condição.
+Ver o detalhamento dessa implementação em: data/form_data.dart

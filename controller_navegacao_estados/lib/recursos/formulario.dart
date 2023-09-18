@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 
 //criando atributos que serão visiveis nas classes que trazer mixin
 mixin reutilizavel {
+  TextEditingController entradanumero = TextEditingController();
   TextEditingController entradaNome = TextEditingController();
 }
 
@@ -25,7 +26,10 @@ class FormularioState extends State<Formulario> with reutilizavel {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme
+            .of(context)
+            .colorScheme
+            .inversePrimary,
         title: Text(
           "Aprendendo Formulários",
         ),
@@ -56,21 +60,50 @@ class MeuCampoTextoEstado extends State<MeuCampoTexto> with reutilizavel {
       // A partir dela, é possível acessar alguns detalhes do widget, como seu estado atual.
       child: Column(
         children: [
+          SizedBox(height: 20,),
           TextFormField(
             keyboardType: TextInputType.number,
             // tipo do teclado que será aberto ao clicar no formulario
-            controller: entradaNome,
+            controller: entradanumero,
             // armazena o valor inserido
             validator: (value) {
               // verifica o que foi digitado pelo usuário. Caso esteja ok retorna nulo. Caso contrario, exibe mensagem vermelha logo abaixo (return mensagem)
               if (value == "9") {
                 return "9 nao doidao";
               }
+              else if (value == null){
+                return "Campo nulo";
+              }
+              else if (value.toString().isEmpty){
+                return "Campo vazio";
+              }
               return null;
             },
-            decoration: InputDecoration(hintText: "Não digite o número 9!"),
+            decoration: InputDecoration(
+                hintText: "Digite um número diferente de 9",
+            ),
             textAlign: TextAlign.center,
           ),
+          SizedBox(height: 20,),
+          TextFormField(
+            keyboardType: TextInputType.name,
+            // tipo do teclado que será aberto ao clicar no formulario
+            controller: entradaNome,
+            // armazena o valor inserido
+            validator: (value) {
+              // verifica o que foi digitado pelo usuário. Caso esteja ok retorna nulo. Caso contrario, exibe mensagem vermelha logo abaixo (return mensagem)
+              if (value?.toLowerCase() == "eduardo") {
+                return "Esse nome não!";
+              }
+              else if (value!.isEmpty) {
+                return "Digite um nome válido! Está vazio!";
+              }
+              return null;
+            },
+            decoration: InputDecoration(hintText: "Não digite o nome eduardo!"),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 20,),
           ElevatedButton(
               onPressed: () {
                 if (chave.currentState!.validate()) {
@@ -83,7 +116,8 @@ class MeuCampoTextoEstado extends State<MeuCampoTexto> with reutilizavel {
                           "existem erros. verifique os campos em vermelho")));
                 }
               },
-              child: Text("aperta ai zin")),
+              child: Text("Enviar formulário")),
+          SizedBox(height: 20,),
           ElevatedButton(
               onPressed: () {
                 Navigator.push(context,

@@ -1,0 +1,14 @@
+Em poucas palavras: são as coordenadas para determinada posição na árvore de widgets.
+
+
+
+
+Ao criar um novo widget (objeto), com seus respectivos atributos, não colocamos eles dentro de variáveis.
+
+Assim, para acessar o objeto correto em uma chamada ao widget, devemos, em alguns casos, passar o contexto em que estamos.
+
+Ou seja, o local onde estamos na hierarquia.
+
+Sabendo se localizar na hierarquia o flutter consegue, então, encontrar o objeto correto.
+
+Ou seja, o widget daquele contexto.

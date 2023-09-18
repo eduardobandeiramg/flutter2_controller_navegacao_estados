@@ -11,10 +11,12 @@ atributos importantes:
 TextFormField{
 atributos importantes:
 - controller: recebe a variavel que armazenará os dados digitados (variavel é um objeto do tipo TextEditingController)
-- validator: valida as informações digitadas pelo usuario. Retorna null se estiver ok e retorna uma mensagem se estiver errado
+- validator: valida as informações digitadas pelo usuario.
+    Retorna null se estiver ok e retorna uma mensagem se estiver errado
     Como chamar o validator: key.currentState!.validate()
     Normalmente se chama o validator ao pressionar algum botão ou ao passar para o próximo formulário.
     O validator não funcionará se o TextFormField não foi um filho, neto, bisneto (...) de "Form"!!
+    O validator não é executado quando o build é executado. Nem adianta querer usar setState()!!!
 
 }
 
