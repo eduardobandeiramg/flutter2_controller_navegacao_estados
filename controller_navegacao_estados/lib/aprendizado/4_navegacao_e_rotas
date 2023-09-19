@@ -19,4 +19,5 @@ rotas nomeadas: usando um map, cada tela recebe uma nomeação, um "apelido", qu
      },
     );
 
+    Navigator.of(context).pushNamed (context, "/form');
     Navigator.pushNamed (context, "/form');
