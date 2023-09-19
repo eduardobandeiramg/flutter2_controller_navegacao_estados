@@ -15,8 +15,7 @@ mixin reutilizavel {
 
 //Construção da página pra chamar na main;
 class Formulario extends StatefulWidget {
-  final BuildContext estado;
-  const Formulario(this.estado);
+  const Formulario();
   @override
   State<Formulario> createState() => FormularioState();
 }

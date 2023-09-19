@@ -1,4 +1,5 @@
 import 'package:controller_navegacao_estados/data/form_data.dart';
+import 'package:controller_navegacao_estados/recursos/formulario.dart';
 //import 'package:controller_navegacao_estados/recursos/formulario.dart';
 import 'package:controller_navegacao_estados/recursos/pagina_inicial.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // Adicionando as rotas nomeadas, que serão acessadass da seguinte forma:
+      // navigator.pushNamed (context , "formulario");
+      routes: {
+        "formulario" : (context) => Formulario(),
+      },
+
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),

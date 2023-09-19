@@ -19,7 +19,7 @@ class _PaginaInicialState extends State<PaginaInicial> {
       body: ListView(children: Dados.of(context).listaContaineres),
       floatingActionButton: FloatingActionButton(onPressed: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (Outrocontext) => Formulario(context)));
+            context, MaterialPageRoute(builder: (Outrocontext) => Formulario()));
               // Modou-se o nome do Contexto que está sendo criado pelo builder, de forma que "context" se refira ao contexto atual e o mesmo que os anteriores. Clicar sobre para verificar os correspondentes sendo selecionados simultaneamente.
       }),
     );

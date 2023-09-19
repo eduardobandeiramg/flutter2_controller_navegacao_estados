@@ -11,7 +11,7 @@ rotas anônimas: as telas são chamadas na hora de executar a navegação.
 
     Navigator.pop (context);
 
-rotas nomeadas: cada tela recebe uma nomeação, um "apelido", que pode ser chamado ao executar uma navegação
+rotas nomeadas: usando um map, cada tela recebe uma nomeação, um "apelido", que pode ser chamado ao executar uma navegação
 
     MaterialApp (routes: {
         '/': (context) => InitialScreen (),
